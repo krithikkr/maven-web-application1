@@ -1,10 +1,5 @@
-FROM openjdk:8-alpine
+FROM tomcat:8.0.20-jre8
 
-# Required for starting application up.
-RUN apk update && apk add /bin/sh
-
-RUN mkdir -p /opt/app
-ENV PROJECT_HOME /opt/app
 
 COPY target/maven-web-application*.war /usr/local/tomcat/webapps/maven-web-application.war
 
